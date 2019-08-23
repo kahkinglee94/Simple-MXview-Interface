@@ -1,0 +1,71 @@
+.main{
+    height: 100vh;
+    width: 100vw;
+}
+
+.upper{
+    border-style: solid;
+    border-color: red;
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+}
+
+.lower{
+    border-style: solid;
+    border-color: blue;
+    height: 35vh;
+    width: 100vw;
+    display: flex;
+}
+
+.group{
+    border-style: solid;
+    height: 60vh;
+    width: 20vw;
+    flex: 0 0 20%;
+    overflow: auto;
+}
+
+.widget{
+    background-color: aqua;
+    height: 60vh;
+    width:50vw;
+    flex: 1
+}
+
+.devinfo{
+    border-style: solid;
+    height: 35vh;
+    width: 20vw;
+    flex: 0 0 20%
+}
+
+.events{
+    border-style: solid;
+    border-color: coral;
+    height: 35vh;
+    width: 79vw;
+    flex: 1;
+}
+
+#eventtable, td, th{
+    border-bottom: 1px solid black;
+    text-align: left;
+    width: 79vw;
+}
+
+#eventtable{
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+}
+
+tbody{
+    display: block;
+    height: 30vh;
+    width: 79vw;
+    overflow: auto;
+}

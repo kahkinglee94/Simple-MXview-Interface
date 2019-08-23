@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TABLE OF CONTENTS</title>
+	<script
+  		src="https://code.jquery.com/jquery-3.4.1.min.js"
+  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous">
+	</script>
+	<script src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+	<div class="main">
+	
+		<div class="upper">
+				
+			<div class="group">
+				<ul id="sitelist">
+					
+				</ul>
+			</div>
+
+			<div class="widget">
+				<iframe 
+				id="mxview-topology" 
+				src="http://192.168.127.20/#/widget?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTY2MjcyMzYyLCJqdGkiOiI3MDBmMDJiZWVmMmVjNTE3YTk3Njg0MzVlZGNhZWIwZGRlYjljNGUzIn0.dsqhghCCEVYQrtrl2_WwY0_VnWQn3y82C0P32I1esN4&layout=1&show=1" 
+				frameborder="0" 
+				scrolling="0" 
+				style="border-radius: 2px; box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 2px 0px, rgba(0, 0, 0, 0.24) 0px 2px 2px 0px; width: 90vw; height: 60vh;">
+			</iframe>
+			</div>
+	
+		</div>
+	
+		<div class="lower">
+	
+			<div class="devinfo">
+	
+			</div>
+	
+			<div class="events">
+	
+				<div id="rtevents">
+
+					<table id="eventtable">
+						<thead>
+							<tr>
+								<th>Events</th>
+							</tr>
+						</thead>
+						<tbody id="tablebody"></tbody>
+					</table>
+					
+				</div>
+			
+			</div>
+	
+		</div>
+	
+	</div>	
+
+	<script>
+		$(function(){
+			var socket = io.connect();
+
+			socket.on("trigger_sites", function(data){
+				data.forEach((item)=>{
+					var node = document.createElement("LI");
+					var textnode = document.createTextNode(item[0]);
+					node.appendChild(textnode);
+					//document.getElementsByClassName("group")[0].appendChild(node);
+					document.getElementById("sitelist").appendChild(node);
+				});
+			});
+
+			socket.on("trigger_groups", function(data){
+				data.forEach((item)=>{
+					var node = document.createElement("LI");
+					var textnode = document.createTextNode(item[0]);
+					node.appendChild(textnode);
+					//document.getElementsByClassName("group")[0].appendChild(node);
+					document.getElementById("sitelist").appendChild(node);
+				});
+			});
+
+			socket.on("trigger_deviceIp", function(data){
+				data.forEach((item)=>{
+					var node = document.createElement("LI");
+					var textnode = document.createTextNode(item);
+					node.appendChild(textnode);
+					//document.getElementsByClassName("group")[0].appendChild(node);
+					document.getElementById("sitelist").appendChild(node);
+				});
+			});
+
+			socket.on("trigger_events", function(data){
+				data.forEach((item)=>{
+					var table = document.getElementById("tablebody");
+					var newRow = table.insertRow(-1);
+					var newCell = newRow.insertCell(0);
+					newCell.innerHTML = item;
+				});
+			});
+
+			socket.on("trigger_detail", function(data){
+				var textnode = document.createTextNode("|Device IP: " + data.source_ip + "| Severity: " + data.severity + "|");
+				var table = document.getElementById("tablebody");
+				var newRow = table.insertRow(0);
+				var newCell = newRow.insertCell(0);
+				newCell.appendChild(textnode);
+			});
+		});
+	</script>
+</body>
+</html>
