@@ -46,4 +46,14 @@ This section covers the widget part of the website. The image part of the server
 website which allows the user to interact with it. Changes made will be reflected in both the website and
 the server.
 
-## Evetns Section
+## Events Section
+![](APIweb-events-1.png)
+This section covers the events part of the website. 
+There are two features in this section. Firstly, a few most recent events are shown in the events table.
+Lastly, the table updates automatically as new real time events from the server is added to the table. 
+These two features are done using two different methods, the API method and socket.io method respectively.
+1) The API request method (For most recent events)
+![](APIweb-events-code-1.png)
+
+2) The socket.io method (For real time events)
+![](APIweb-rtevents-code-1.png)
