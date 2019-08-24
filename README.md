@@ -1,5 +1,8 @@
 # Simple-MXview-Interface
-Disclaimer: Should this article infringe any copyright issues, please send me an email. I will take it down immediately.
+
+## Disclaimer 
+
+Should this article infringe any copyright issues, please send me an email. I will take it down immediately.
 You may reach me at lekingz94@gmail.com. Some image details have been removed to avoid violating any copyright issues.
 
 ## Overview
@@ -42,3 +45,5 @@ to make a legit request to the server.
 This section covers the widget part of the website. The image part of the server is embedded into the
 website which allows the user to interact with it. Changes made will be reflected in both the website and
 the server.
+
+## Evetns Section
