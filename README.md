@@ -8,7 +8,7 @@ You may reach me at lekingz94@gmail.com. Some image details have been removed to
 ## Overview
 This article focuses on recreating a simpler version of MXview interface using MXview API. The final result is
 shown below.
-![](MXviewUI.png)
+![](WebAPI-example.png)
 
 ## Steps:
 1) Created a local server using Node.js Express module. 
@@ -32,7 +32,7 @@ shown below.
       RTEvents.js
       
 ## Group Section
-<img src="APIweb-group-1.png" width="200" height="300">
+<img src="APIweb-group.png" width="200" height="300">
 This section covers the entire structural tree of the users' configuration. The groups information
 are obtained from an API request to MXview Server. An example code of API request is given below.
 
@@ -47,7 +47,7 @@ website which allows the user to interact with it. Changes made will be reflecte
 the server.
 
 ## Events Section
-![](APIweb-events-1.png)
+![](APIweb-events.png)
 This section covers the events part of the website. 
 There are two features in this section. Firstly, a few most recent events are shown in the events table.
 Lastly, the table updates automatically as new real time events from the server is added to the table. 
