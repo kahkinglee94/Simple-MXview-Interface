@@ -8,7 +8,7 @@ You may reach me at lekingz94@gmail.com. Some image details have been removed to
 ## Overview
 This article focuses on recreating a simpler version of MXview interface using MXview API. The final result is
 shown below.
-![](APIweb-whole-1.png)
+![](MXviewUI.png)
 
 ## Steps:
 1) Created a local server using Node.js Express module. 
